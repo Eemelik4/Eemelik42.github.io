@@ -12,14 +12,16 @@
           <li><a href="index.html">Koti</a></li>
           <li><a href="order.html">Tilaus</a></li>
         </ul>
+        <main>
         <div id="logo" class="pizza">
             <img src="romas_pizzeria.png"> 
             <h1>Pizza Roma</h1>
         </div>
-        <p>Tilauksen teko:</p>
-        <p>Valitse vaihtoehdoista ja tilaa kotiovelle edullisesti maukaus ja lämmin pizza!!</p>
 
         <article id="pizzaTilaus">
+
+        <p>Tilauksen teko:</p>
+        <p>Valitse vaihtoehdoista ja tilaa kotiovelle edullisesti maukaus ja lämmin pizza!!</p>
          
         <input type="checkbox" id="kinkkuananas" value=""> Kinkkuananas <strong>8€</strong><br>
         <input type="number" id="kinkkuAnanasMaara" value=""> 
@@ -32,19 +34,24 @@
         <button onclick="juustoFunktio()">Lisää ostoskoriin</button>
         <p id="juusto"></p>
 
-        <button onclick="laskeYhteen()">Laske ostoskorin sisältö</button>
-        <p id="kaikenYhteisHinta"></p>
+
+            <button onclick="laskeYhteen()">Laske ostoskorin sisältö</button>
+            <p id="kaikenYhteisHinta"></p>
+
         
         <p>Kotiinkuljetus vai nouto?</p>
         <button onclick="kotiinKuljetus()">Kotiin</button>
         <button onclick="tilausNouto()">Nouto</button>
         <p id="kuljetus"></p>
+
         
-        
+        <article id="huvaksu">
         <input type="text" value="">
         <button onclick="">Hyväksy</button>
-
         </article>
+    </article>
+
+    </main>
         
 
         <script src="script.js"></script>

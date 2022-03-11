@@ -3,6 +3,11 @@
 body {
   background-color:antiquewhite;
 }
+main {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 600px;
+}
 
 /* Navigointipalkki */
 #navigointi ul {
@@ -50,4 +55,8 @@ body {
 #pizzaTilaus input {
   border-radius:5px;
   background-color: beige;
+}
+
+#huvaksu {
+  display:none;
 }
