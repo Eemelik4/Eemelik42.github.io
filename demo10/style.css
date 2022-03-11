@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family');
+
+body {
+  background-color:antiquewhite;
+}
+
+/* Navigointipalkki */
+#navigointi ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: antiquewhite;
+}
+#navigointi li {
+  float: left;
+}
+#navigointi li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 125%;
+}
+#navigointi li a:hover {
+  background-color: #f00;
+}
+#navigointi ul li[nykyinen] {
+  background-color: #f00;
+}
+
+#pizzaRoma {
+  font-size: 155%;
+  color: #f00;
+  font-family: 'verdana';
+}
+
+#pizzaTilaus button {
+  border-radius: 8px;
+  background-color: antiquewhite;
+  cursor: pointer;
+  text-decoration:none;
+  padding: 10px;
+  transition-duration: 0.4s;
+}
+#pizzaTilaus button:hover {
+  font-size:105%;
+}
+#pizzaTilaus input {
+  border-radius:5px;
+  background-color: beige;
+}
