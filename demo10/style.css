@@ -3,11 +3,6 @@
 body {
   background-color:antiquewhite;
 }
-main {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 600px;
-}
 
 /* Navigointipalkki */
 #navigointi ul {
@@ -35,12 +30,13 @@ main {
   background-color: #f00;
 }
 
-#pizzaRoma {
+#pizzaRoma { /* Etusivun otsikko */
   font-size: 155%;
   color: #f00;
   font-family: 'verdana';
 }
 
+/* Pizzantilausprosessi CSS */
 #pizzaTilaus button {
   border-radius: 8px;
   background-color: antiquewhite;
@@ -56,7 +52,6 @@ main {
   border-radius:5px;
   background-color: beige;
 }
-
 #huvaksu {
   display:none;
 }

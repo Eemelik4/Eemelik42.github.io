@@ -1,7 +1,6 @@
 var kinkkuPizzaYhteishinta; // Luodaan muuttuja johon tallennetaan kinkku pizzojen yhteishinta
 var onkoKinkkuValittu; // Muuttuja johon tallennetaan tieto onko checkboxissa rasti
 var kaikenYhteisHinta; // Muuttuja johon tallennetaan kaikkien valittujen pizzojen hinta
-
 // Funktio jolla lasketaan kinkkuananaspizzan määrä ja hinta
 function kinkkuFunktio() {
   onkoKinkkuValittu = document.getElementById("kinkkuananas"); // Hankkii tiedon onko checkboxissa rasti
@@ -14,7 +13,6 @@ function kinkkuFunktio() {
     document.getElementById("kinkku").innerHTML = "Virhe";
   }
 }
-
 // Funktio jolla lasketaan juustopizzojen määrät jne
 function juustoFunktio() {
   onkoJuustoValittu = document.getElementById("juustoPizza");
@@ -27,13 +25,11 @@ function juustoFunktio() {
     document.getElementById("juusto").innerHTML = "Virhe...";
   }
 }
-
 // Funktio jolla lasketaan valittujen pizzojen yhteishinta
 function laskeYhteisHinta() {
   kaikenYhteisHinta = kinkkuAnanasMaara.value * 8 + juustoPizzaMaara.value * 5;
   document.getElementById("hinta").innerHTML = "Yhteishinta: " + kaikenYhteisHinta + " €";
 }
-
 // 2 funktiota jotka toteutuu kun käyttäjä valitsee joko 'nouto' tai 'kuljetus'
 function kotiinKuljetus() { // Jos käyttäjä valitsee kuljetuksen
   document.getElementById("kuljetus").innerHTML = "Kotiinkuljetus. Kuljetusaika on noin " + kaikenYhteisHinta * 0.7 + " min. Mihin toimitamme tämän?"; // kaikenYhteisHinta * 0.5 on toimitusaika
