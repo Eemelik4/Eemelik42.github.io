@@ -26,12 +26,22 @@
         <!-- Kinkkuananaspizza -->
         <input type="checkbox" id="kinkkuananas" value=""> Kinkkuananaspizza <strong>8€</strong><br> <!-- Luo 'checkboxin' josta valitaan pizza -->
         <input type="number" id="kinkkuAnanasMaara" value=""> <!-- Luo alueen johon syötetään pizzojen määrä -->
-        <button onclick="kinkkuFunktio()">Lisää ostoskoriin</button><br> <!-- Nappi joka laukaisee funktion kinkkuFunktio() -->
+
+        <input type="checkbox" id="lisaKatkarapu" value="">Katkarapu (<strong>+1€</strong>)
+        <input type="checkbox" id="lisaSipuli" value="">Sipuli (<strong>+1€</strong>)
+        <button onclick="kinkkuAnanasLisaTayte()">Lisää ostoskoriin</button>
+        <p id="kinkkuAnanasLisaTayte"></p>
+
         
         <!-- Juustopizza -->
         <input type="checkbox" id="juustoPizza" value=""> Juustopizza <strong>5€</strong><br>
         <input type="number" id="juustoPizzaMaara" value="">
-        <button onclick="juustoFunktio()">Lisää ostoskoriin</button>
+
+        <input type="checkbox" id="juustoLisaKatkarapu" value="">Katkarapu (<strong>+1€</strong>)
+        <input type="checkbox" id="juustoLisaSipuli" value="">Sipuli (<strong>+1€</strong>)
+        <button onclick="juustoLisaTayte()">Lisää ostoskoriin</button>
+        <p id="juustoLisaTayte"></p>
+
 
         <p id="kinkku"></p> <!-- Tähän tulee kinkkupizzojen määrä ja yhteishinta -->
         <p id="juusto"></p> 

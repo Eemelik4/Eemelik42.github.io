@@ -3,6 +3,7 @@ var onkoKinkkuValittu; // Muuttuja johon tallennetaan tieto onko kinkkupizza val
 var kaikenYhteisHinta; // Muuttuja johon tallennetaan kaikkien valittujen pizzojen hinta
 var onkoJuustoValittu; // Muuttuja johon tallennetaan tieto onko juustopizza valittu
 // Funktio jolla lasketaan kinkkuananaspizzan määrä ja hinta
+
 function kinkkuFunktio() {
   onkoKinkkuValittu = document.getElementById("kinkkuananas"); // Hankkii tiedon onko checkboxissa rasti
   if (onkoKinkkuValittu.checked && kinkkuAnanasMaara.value >= 0) { // JOS checkboxissa on rasti niin seuraavat asiat suoritetaan   
@@ -16,6 +17,7 @@ function kinkkuFunktio() {
     document.getElementById("kinkku").innerHTML = "Virhe";
   }
 }
+
 // Funktio jolla lasketaan juustopizzojen määrät jne
 function juustoFunktio() {
   onkoJuustoValittu = document.getElementById("juustoPizza");
@@ -30,16 +32,61 @@ function juustoFunktio() {
     document.getElementById("juusto").innerHTML = "Virhe";
   }
 }
+
+var kinkkuAnanasLisaKatkarapu; // Muuttuja johon tallennetan tieto tuleeko kinkkuananaspizzaan katkarapua
+var kinkkuAnanasLisaSipuli; // Muttuuja johon tallennetaan tieto tuleeko kinkuananaspizzaan sipulia
+function kinkkuAnanasLisaTayte() {
+  kinkkuAnanasLisaKatkarapu = document.getElementById("lisaKatkarapu"); // Lukee inputin kyseisiin muuttujiin
+  kinkkuananasLisaSipuli = document.getElementById("lisaSipuli");
+  document.getElementById("kinkkuAnanasLisaTayte").innerHTML = "Lisätty!";
+}
+var juustoLisaKatkarapu;
+var juustoLisaSipuli;
+function juustoLisaTayte() {
+  juustoLisaKatkarapu = document.getElementById("juustoLisaKatkarapu");
+  juustoLisaSipuli = document.getElementById("juustoLisaSipuli");
+  document.getElementById("juustoLisaTayte").innerHTML = "Lisätty!";
+}
+
+
 // Funktio jolla lasketaan valittujen pizzojen yhteishinta
 function laskeYhteisHinta() {
   kaikenYhteisHinta = kinkkuAnanasMaara.value * 8 + juustoPizzaMaara.value * 5;
-  document.getElementById("hinta").innerHTML = "Yhteishinta: " + kaikenYhteisHinta + " €";
-  if (kinkkuAnanasMaara.value > 0) { // Tulostaa kinkkuananaspizzojen määrän jos niitä on
-    document.getElementById("valitutKinkkuPizzat").innerHTML = kinkkuAnanasMaara.value + " kinkkuananaspizzaa";
+
+  if (kinkkuAnanasMaara.value > 0) { // Jos kinkkuananas pizzoja on enemmän kuin 0 niin jatketaan:
+    if (lisaKatkarapu.checked) { // Jos kinkkuananaspizzaan tulee katkarapua niin jatketaan:
+    kaikenYhteisHinta = kaikenYhteisHinta + 1 * kinkkuAnanasMaara.value; // Lisätään lisätäytteen hinta
+    }
+    if (lisaSipuli.checked) {
+    kaikenYhteisHinta = kaikenYhteisHinta + 1 * kinkkuAnanasMaara.value;
+    }
   }
+
   if (juustoPizzaMaara.value > 0) {
+    if (juustoLisaKatkarapu.checked) {
+    kaikenYhteisHinta = kaikenYhteisHinta + 1 * juustoPizzaMaara.value;
+    }
+    if (juustoLisaSipuli.checked) {
+    kaikenYhteisHinta = kaikenYhteisHinta + 1 * juustoPizzaMaara.value;
+    }
+}
+
+  document.getElementById("hinta").innerHTML = "Yhteishinta: " + kaikenYhteisHinta + " €"; // Tulostaa yhteishinnan
+  if (kinkkuAnanasMaara.value > 0) { // Jos kinkkuananas pizzoja on enemmän kuin 0 niin jatketaan:
+    if (lisaKatkarapu.checked || lisaSipuli.checked) {  // Jos kinkkuananas pizzoissa on lisätäytteitä niin jatketaan:
+      document.getElementById("valitutKinkkuPizzat").innerHTML = kinkkuAnanasMaara.value + " kinkkuananaspizzaa valituilla lisätäytteillä";
+    } else { // Jos lisätäytteitä ei ole:
+      document.getElementById("valitutKinkkuPizzat").innerHTML = kinkkuAnanasMaara.value + " kinkkuananaspizzaa";
+    }
+  }
+
+  if (juustoPizzaMaara.value > 0) {
+    if (juustoLisaKatkarapu.checked || juustoLisaSipuli.checked) {
+      document.getElementById("valitutJuustoPizzat").innerHTML = juustoPizzaMaara.value + " juustopizzaa valituilla lisätäytteillä";
+  } else {
     document.getElementById("valitutJuustoPizzat").innerHTML = juustoPizzaMaara.value + " juustopizzaa";
   }
+}
 }
 // 2 funktiota jotka toteutuu kun käyttäjä valitsee joko 'nouto' tai 'kuljetus'
 function kotiinKuljetus() { // Jos käyttäjä valitsee kuljetuksen
