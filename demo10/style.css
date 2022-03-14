@@ -1,7 +1,25 @@
 @import url('https://fonts.googleapis.com/css?family');
 
 body {
-  background-color:antiquewhite;
+  background-image:url('img/banner_2.png');
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  margin: 0;
+  padding: 0;
+  overflow-y: scroll;
+}
+html {
+  height: -webkit-fill-available;
+}
+main {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1em;
+  max-width: 900px;
+  min-width: 0;
+  width: 100%;
 }
 
 /* Navigointipalkki */
@@ -10,48 +28,105 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: antiquewhite;
+  background-color: black;
 }
 #navigointi li {
-  float: left;
+  float: right;
 }
 #navigointi li a {
   display: block;
-  color: black;
+  color: red;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 125%;
 }
 #navigointi li a:hover {
-  background-color: #f00;
+  background-color: yellow;
 }
 #navigointi ul li[nykyinen] {
-  background-color: #f00;
+  background-color: yellow;
 }
 
-#pizzaRoma { /* Etusivun otsikko */
+#pizzaRoma {
+  text-align: center;
   font-size: 155%;
-  color: #f00;
+  color: yellow;
   font-family: 'verdana';
 }
 
-/* Pizzantilausprosessi CSS */
-#pizzaTilaus button {
-  border-radius: 8px;
-  background-color: antiquewhite;
-  cursor: pointer;
-  text-decoration:none;
-  padding: 10px;
+#teksti {
+  text-align: center;
+  font-size: 200%;
+  color: yellow;
+  font-family: 'verdana';
+}
+
+.button {
+  border: none;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
   transition-duration: 0.4s;
+  cursor: pointer;
 }
-#pizzaTilaus button:hover {
-  font-size:105%;
+
+.button1 {
+  margin: 150px 260px;
+  background-color: black; 
+  color: yellow; 
+  border: 5px solid red;
 }
-#pizzaTilaus input {
-  border-radius:5px;
-  background-color: beige;
+
+.button1:hover {
+  background-color: red;
+  color: black;
 }
-#huvaksu {
-  display:none;
+
+.button2 {
+  margin: 150px 280px;
+  background-color: black; 
+  color: yellow; 
+  border: 5px solid red;
+}
+
+.button2:hover {
+  background-color: red;
+  color: black;
+}
+
+.card{
+  width: 800px;
+  height: 550px;
+  display: inline-block;
+  border-radius: 30px;
+  padding: 15px 25px;
+  box-sizing: border-box;
+  cursor: pointer;
+  margin: 95px 70px;
+  background-image: url('img/fantasia.png');
+  background-position: center;
+  background-size: cover;
+  font-size: 200%;
+  text-align: center;
+  color: antiquewhite;
+}
+
+.card2{
+  width: 800px;
+  height: 550px;
+  display: inline-block;
+  border-radius: 30px;
+  padding: 15px 25px;
+  box-sizing: border-box;
+  cursor: pointer;
+  margin: 100px 70px;
+  background-image: url('img/pizza.png');
+  background-position: center;
+  background-size: cover;
+  font-size: 200%;
+  text-align: center;
+  color: antiquewhite;
 }
